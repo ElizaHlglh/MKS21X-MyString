@@ -11,9 +11,31 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   public char charAt(int index){
     return data[index];
   }
+
+
   public int length(){
-    try{
-      for (int i <)
+    int count = 0;
+    for (int i = 0; i < data.length; i++){
+      count+= 1;
     }
+    return count;
   }
+
+  public CharSequence subSequence(int start, int end){
+    String copy = "";
+    for (int i = start; i < end; i++){
+      copy += data[i];
+    }
+    return CharSequence(copy);
+  }
+
+  public Strng toString(){
+    String ans = "";
+    for (int i = 0; i < data.length; i++){
+      ans+= data[i];
+    }
+    return ans;
+  }
+
+
 }
