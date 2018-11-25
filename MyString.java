@@ -26,15 +26,19 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     for (int i = start; i < end; i++){
       copy += data[i];
     }
-    return CharSequence(copy);
+    return new MyString(copy);
   }
 
-  public Strng toString(){
+  public String toString(){
     String ans = "";
     for (int i = 0; i < data.length; i++){
-      ans+= data[i];
+      ans += data[i];
     }
     return ans;
+  }
+
+  public int compareTo(CharSequence x){
+    return (data.toString()).compareTo(x.toString());
   }
 
 
