@@ -9,7 +9,12 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   //must watch for exception!!!
   public char charAt(int index){
-    return data[index];
+    if (index < 0 || index >= data.length){
+      return ' ';
+    }
+    else{
+      return data[index];
+    }
   }
 
 
@@ -21,12 +26,12 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return count;
   }
 
-  public CharSequence subSequence(int start, int end){
+  public String subSequence(int start, int end){
     String copy = "";
     for (int i = start; i < end; i++){
       copy += data[i];
     }
-    return new MyString(copy);
+    return copy;
   }
 
   public String toString(){
@@ -38,7 +43,25 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public int compareTo(CharSequence x){
-    return (data.toString()).compareTo(x.toString());
+    if (data.length > x.length()){
+      return 1;
+    }
+    if (data.length < x.length()){
+      return -1;
+    }
+    for (int i = 0; i < data.length && i < x.length(); i++){
+      String charac1 = "";
+      charac1 += data[i];
+      String charac2 = "";
+      charac2 += x.charAt(i);
+      if (charac1.compareTo(charac2) > 0){
+        return 1;
+      }
+      if (charac1.compareTo(charac2) < 0){
+        return -1;
+      }
+    }
+    return 0;
   }
 
 
