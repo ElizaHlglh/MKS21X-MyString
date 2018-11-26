@@ -1,4 +1,4 @@
-public class driver {
+public class driver { // borrowed from Google group: Tejas Narayan
   public static void main(String[] args) {
     String refStr = "antidisestablishmentarianism";
     MyString testStr = new MyString(refStr);
