@@ -27,7 +27,7 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public String subSequence(int start, int end){
-    if (start < 0 || end < 0 || start >= data.length || end >= data.length){
+    if (start < 0 || end < 0 || start >= data.length || end > data.length){
       throw new IndexOutOfBoundsException("Invalid start and/or end value: "+ start + " " + end);
     }
     String copy = "";
