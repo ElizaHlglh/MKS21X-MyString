@@ -10,7 +10,7 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   //must watch for exception!!!
   public char charAt(int index){
     if (index < 0 || index >= data.length){
-      return ' ';
+      throw new IndexOutOfBoundsException("Invalid index: " + index);
     }
     else{
       return data[index];
